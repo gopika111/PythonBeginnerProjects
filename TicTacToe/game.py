@@ -1,11 +1,19 @@
+import random
+
 import board
 from player import Player
 
+moves_available = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
 
 def play():
-    print('Enter')
-
-
+    move = input('Enter Your Move (Input any number from 1 to 9 to enter your move) :')
+    matrix = board.get_board(move, 'x')
+    board.display_matrix(matrix)
+    moves_available.remove(int(move))
+    print("Computer's Turn")
+    matrix = board.get_board(random.choice(moves_available), player2.sign)
+    board.display_matrix(matrix)
 def get_current_player():
     pass
 
@@ -30,5 +38,7 @@ player2 = Player('Comp', 'C', comp_sign)
 print('Player Name : {0} Sign Chosen : {1}'.format(player2.name, player2.sign))
 
 print("Let's Play !!!")
-board = board.get_board()
-print(board)
+current_board = board.matrix
+board.display_matrix(current_board)
+
+play()
