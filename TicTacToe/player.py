@@ -3,3 +3,6 @@ class Player:
         self.name = name
         self.type = type
         self.sign = sign
+
+    def comp_turn(self):
+        pass
